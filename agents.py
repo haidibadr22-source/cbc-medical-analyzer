@@ -24,14 +24,12 @@ load_dotenv()
 
 llm = ChatOpenAI(
 
-    model="gpt-4.1",
+    model="deepseek/deepseek-chat",
 
-    temperature=0,
+    base_url="https://openrouter.ai/api/v1",
 
-    api_key=os.getenv("OPENAI_API_KEY")
-
+    api_key=os.environ["OPENAI_API_KEY"]
 )
-
 # -------------------------------------------------------
 # Parser Agent
 # -------------------------------------------------------
