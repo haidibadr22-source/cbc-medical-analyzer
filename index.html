@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CBC Medical Analyzer</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🩸 CBC Medical Report Analyzer</h1>
+
+        <p class="subtitle">
+            Upload a CBC laboratory report in PDF format.
+        </p>
+
+        <form id="uploadForm">
+
+            <input
+                type="file"
+                id="pdf"
+                accept=".pdf"
+                required
+            >
+
+            <button type="submit">
+
+                Analyze Report
+
+            </button>
+
+        </form>
+
+        <div id="loading">
+
+            ⏳ Processing report...
+
+        </div>
+
+        <div id="result">
+
+            <h2>Extracted JSON</h2>
+
+            <pre id="jsonOutput"></pre>
+
+            <button id="downloadBtn">
+
+                Download JSON
+
+            </button>
+
+            <h2>Validation</h2>
+
+            <div id="validation"></div>
+
+            <h2>Medical Summary</h2>
+
+            <div id="summary"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
