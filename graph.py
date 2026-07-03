@@ -1,6 +1,6 @@
 # graph.py
 
-from typing import TypedDict
+from typing import TypedDict, Dict, Any
 from langgraph.graph import StateGraph, END
 
 from agents import (
@@ -16,13 +16,12 @@ from utils import read_pdf
 # LangGraph State
 # ==========================================================
 
+
 class GraphState(TypedDict):
     report: str
-    extracted_json: str
+    extracted_json: Dict[str, Any]
     validation: str
     summary: str
-
-
 # ==========================================================
 # Workflow Nodes
 # ==========================================================
@@ -89,7 +88,7 @@ def process_report(pdf_path: str):
 
     state = GraphState(
         report=report,
-        extracted_json="",
+        extracted_json={},
         validation="",
         summary=""
     )
